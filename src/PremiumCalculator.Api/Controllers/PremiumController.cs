@@ -9,16 +9,16 @@ namespace PremiumCalculator.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class PremiumController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<PremiumController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public PremiumController(ILogger<PremiumController> logger)
         {
             _logger = logger;
         }
