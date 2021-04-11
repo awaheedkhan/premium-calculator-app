@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\PremiumCalculator.Api.Common\PremiumCalculator.Api.Common.csproj" />
+    <ProjectReference Include="..\PremiumCalculator.Api.Models\PremiumCalculator.Api.Models.csproj" />
   </ItemGroup>
 
 
