@@ -4,7 +4,7 @@ namespace PremiumCalculator.Api.Common
 {
     public class BaseController<T> : Controller where T : BaseModel
     {
-        private readonly IService<T> _service;
+        protected readonly IService<T> _service;
 
         public BaseController(IService<T> service)
         {

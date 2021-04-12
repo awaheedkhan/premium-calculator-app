@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PremiumCalculator.Api.Models
 {
-    public class CalculatePremiumRequest
+    public class MonthlyPremiumRequest
     {
         public DateTime DateOfBirth { get; set; }
         public int OccupationId { get; set; }
