@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PremiumCalculator.Api.Common\PremiumCalculator.Api.Common.csproj" />
   </ItemGroup>
 
