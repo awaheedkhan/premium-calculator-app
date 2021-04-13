@@ -18,21 +18,33 @@ namespace PremiumCalculator.Api.Controllers
         private const string ApiRoute = "api/premium";
         private readonly ILogger<PremiumController> _logger;
         private readonly IPremiumService _premiumService;
+        private readonly IOccupationService _occupationService;
 
-        public PremiumController(ILogger<PremiumController> logger, IPremiumService premiumService)
+        public PremiumController(ILogger<PremiumController> logger
+            , IPremiumService premiumService
+            , IOccupationService occupationService)
         {
             _logger = logger;
             _premiumService = premiumService;
+            _occupationService = occupationService;
         }
 
         [HttpGet("monthly")]
-        public async Task<IActionResult> Get(MonthlyPremiumRequest monthlyPremiumRequest)
+        public async Task<IActionResult> Get([FromQuery]DateTime dateOfBirth, [FromQuery] int occupationId, [FromQuery] double deathCover, [FromQuery] double monthlyExpense)
         {
-            var result = await _premiumService.Calculate(monthlyPremiumRequest.DateOfBirth.Age()
-                , monthlyPremiumRequest.OccupationId
-                , monthlyPremiumRequest.DeathCover
-                , monthlyPremiumRequest.MonthlyExpense);
+            var result = await _premiumService.Calculate(dateOfBirth.Age()
+                , occupationId
+                , deathCover
+                , monthlyExpense);
             
+            return Ok(result);
+        }
+
+        [HttpGet("occupations")]
+        // TODO: This endpont should be offered with a separate controller
+        public async Task<IActionResult> Occupations()
+        {
+            var result = await _occupationService.Get();
             return Ok(result);
         }
     }

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using PremiumCalculator.Api.Common;
 
 namespace PremiumCalculator.Api.Models
 {
-    public class Occupation
+    public class Occupation : BaseModel
     {
         public int Id { get; set; }
         public string Label { get; set; }
