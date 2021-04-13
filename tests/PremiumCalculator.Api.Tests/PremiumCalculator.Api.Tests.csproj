@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\PremiumCalculator.Api.Data\PremiumCalculator.Api.Data.csproj" />
     <ProjectReference Include="..\..\src\PremiumCalculator.Api.Models\PremiumCalculator.Api.Models.csproj" />
     <ProjectReference Include="..\..\src\PremiumCalculator.Api\PremiumCalculator.Api.csproj" />
   </ItemGroup>

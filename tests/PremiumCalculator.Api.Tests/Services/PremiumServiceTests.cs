@@ -4,6 +4,7 @@ using System;
 using PremiumCalculator.Api.Common;
 using System.Threading.Tasks;
 using Should;
+using PremiumCalculator.Api.Data.Repositories;
 
 namespace PremiumCalculator.Api.Services.Tests
 {
@@ -11,11 +12,13 @@ namespace PremiumCalculator.Api.Services.Tests
     public class PremiumServiceTests
     {
         private IPremiumService _premiumService;
+        private IOccupationsRepository _occupationsRepository;
 
         [SetUp]
         public void SetUp()
         {
-            _premiumService = Substitute.For<IPremiumService>();
+            _occupationsRepository = Substitute.For<IOccupationsRepository>();
+            _premiumService = new PremiumService(_occupationsRepository);
         }
 
         //TODO: Test premium calculation with expected value to test correctness of the farmula implementation
@@ -23,9 +26,13 @@ namespace PremiumCalculator.Api.Services.Tests
         public async Task CalculateTest_Returns_DeathPremium(DateTime dateOfBirth, int occupationId, double deathCoverAmount, double monthlyExpense)
         {
             // Arrange
-            _premiumService.Calculate(dateOfBirth.Age(), occupationId, deathCoverAmount, monthlyExpense).Returns(Task.FromResult(new Models.Premium { 
-                DeathPremium = 500,
-                YearlyCover = 100000
+            _occupationsRepository.Get(occupationId).Returns(Task.FromResult(new Data.Entities.Occupation { 
+                Id = 1,
+                Label = "",
+                Rating = new Data.Entities.Rating { 
+                    Id = 1,
+                    Factor = 1.1
+                }
             }));
 
             // Act
