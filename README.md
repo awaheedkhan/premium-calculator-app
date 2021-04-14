@@ -2,17 +2,9 @@
 A sample application for premium calculations
 
 # Dependencies
-.Net Core Latest
-Angular CLI: 11.2.2
-Node: 14.16.0
-
-Package                      Version
-------------------------------------------------------
-@angular-devkit/architect    0.1102.2 (cli-only)
-@angular-devkit/core         11.2.2 (cli-only)
-@angular-devkit/schematics   11.2.2 (cli-only)
-@schematics/angular          11.2.2 (cli-only)
-@schematics/update           0.1102.2 (cli-only)
+- .Net Core Latest
+- Angular CLI: 11.2.2
+- Node: 14.16.0
 
 # How to run the application
 PremiumCalculator solution (.sln) contains implementation of the API and Unit Tests. Web folder contains a angular based web client.
