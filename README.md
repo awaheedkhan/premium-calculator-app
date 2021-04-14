@@ -7,7 +7,7 @@ A sample application for premium calculations
 - Node: 14.16.0
 
 # How to run the application
-PremiumCalculator solution (.sln) contains implementation of the API and Unit Tests. Web folder contains a angular based web client.
+PremiumCalculator solution (.sln) contains implementation of the API and Unit Tests. Web folder contains an angular based web client.
 
  - Step#1: Get latest code
  - Step#2: Run API (PremiumCalculator.Api should be set as default)
