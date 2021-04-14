@@ -14,6 +14,6 @@ PremiumCalculator solution (.sln) contains implementation of the API and Unit Te
   -- 2.1: API should be available on http://localhost:52123/
  - Step#3: Run web client 
  - 3.1: Open folder premium-calculator-app\web\premium-calculator\src\app
- - 3.2: Run commoand (ng serve -o)
+ - 3.2: Run command (ng serve -o)
  - 3.3: Client application should be available on http://localhost:4200/
 
